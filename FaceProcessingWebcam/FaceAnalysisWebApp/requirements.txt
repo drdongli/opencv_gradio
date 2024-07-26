@@ -3,4 +3,5 @@ dlib
 imutils
 numpy
 gradio
-mediapipe
+mediapipe==0.10.10
+

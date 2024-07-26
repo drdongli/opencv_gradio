@@ -25,6 +25,7 @@ def apply_media_pipe_face_detection(image):
 
 
 def apply_media_pipe_facemesh(image):
+
     with mp_face_mesh.FaceMesh(
             static_image_mode=True,
             max_num_faces=1,
@@ -199,8 +200,8 @@ class FaceProcessing(object):
             with gr.Tabs():
                 with gr.TabItem("Playing with Webcam"):
                     with gr.Row():
-                        webcam_image_in = gr.Image(label="Webcam Image Input", source="webcam")
-                        webcam_video_in = gr.Video(label="Webcam Video Input", source="webcam")
+                        webcam_image_in = gr.Image(label="Webcam Image Input" )
+                        webcam_video_in = gr.Video(label="Webcam Video Input" )
                     with gr.Row():
                         webcam_photo_action = gr.Button("Take the Photo")
                         webcam_video_action = gr.Button("Take the Video")
@@ -210,7 +211,7 @@ class FaceProcessing(object):
                 with gr.TabItem("Mediapipe Facemesh with Webcam"):
                     with gr.Row():
                         with gr.Column():
-                            mp_image_in = gr.Image(label="Webcam Image Input", source="webcam")
+                            mp_image_in = gr.Image(label="Webcam Image Input" )
                         with gr.Column():
                             mp_photo_action = gr.Button("Take the Photo")
                             mp_apply_fm_action = gr.Button("Apply Face Mesh the Photo")
@@ -222,7 +223,7 @@ class FaceProcessing(object):
                 with gr.TabItem("DLib Based Face Orientation"):
                     with gr.Row():
                         with gr.Column():
-                            dlib_image_in = gr.Image(label="Webcam Image Input", source="webcam")
+                            dlib_image_in = gr.Image(label="Webcam Image Input" )
                         with gr.Column():
                             dlib_photo_action = gr.Button("Take the Photo")
                             dlib_apply_orientation_action = gr.Button("Apply Face Mesh the Photo")
@@ -232,7 +233,6 @@ class FaceProcessing(object):
                 with gr.TabItem("Face Orientation on Live Webcam Stream"):
                     with gr.Row():
                         webcam_stream_in = gr.Image(label="Webcam Stream Input",
-                                                    source="webcam",
                                                     streaming=True)
                         webcam_stream_out = gr.Image(label="Webcam Stream Output")
                         webcam_stream_in.change(
